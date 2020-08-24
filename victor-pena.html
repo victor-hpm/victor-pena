@@ -13,8 +13,8 @@
     </style>
     <h2>Hello [[prop1]]!</h2>
 
-    <paper-card heading="{{buttonValue}}" animated="false">
-        <paper-input label="[[inputValue]]" value="{{buttonValue}}"></paper-input>
+    <paper-card heading="[[title]]" animated="false">
+        <paper-input label="inputLabel" value="{{inputValue}}"></paper-input>
         <paper-buton>{{buttonValue}}</paper-buton>
         <slot></slot>
     </paper-card>
@@ -36,18 +36,26 @@
             }
             static get properties() {
                 return {
+                    prop1: {
+                        type: String,
+                        value: 'Victor Peña'
+                    },
                     title: {
                         type: String,
-                        value: 'title'
+                        value: 'Title'
+                    },
+                    inputLabel: {
+                        type: String,
+                        value: 'Label'
                     },
                     inputValue: {
                         type: String,
-                        value: 'label'
+                        value: 'Label',
+                        notify: true
                     },
                     buttonValue: {
                         type: String,
-                        value: 'button',
-                        notify: true
+                        value: 'Button',
                     }
                 };
             }
