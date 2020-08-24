@@ -1,0 +1,58 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<!-- componentes a instalados -->
+<link rel="import" href="../paper-card/paper-card.html">
+<link rel="import" href="../paper-input/paper-input.html">
+<link rel="import" href="../paper-button/paper-button.html">
+
+<dom-module id="victor-pena">
+    <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+
+    <paper-card heading="{{buttonValue}}" animated="false">
+        <paper-input label="[[inputValue]]" value="{{buttonValue}}"></paper-input>
+        <paper-buton>{{buttonValue}}</paper-buton>
+        <slot></slot>
+    </paper-card>
+
+  </template>
+
+    <script>
+        /**
+         * `victor-pena`
+         * mi primer componente en polymer
+         *
+         * @customElement
+         * @polymer
+         * @demo demo/index.html
+         */
+        class VictorPena extends Polymer.Element {
+            static get is() {
+                return 'victor-pena';
+            }
+            static get properties() {
+                return {
+                    title: {
+                        type: String,
+                        value: 'title'
+                    },
+                    inputValue: {
+                        type: String,
+                        value: 'label'
+                    },
+                    buttonValue: {
+                        type: String,
+                        value: 'button',
+                        notify: true
+                    }
+                };
+            }
+        }
+
+        window.customElements.define(VictorPena.is, VictorPena);
+    </script>
+</dom-module>

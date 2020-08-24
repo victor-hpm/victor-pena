@@ -1,0 +1,36 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="victor-pena">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+  </template>
+
+  <script>
+    /**
+     * `victor-pena`
+     * mi primer componente en polymer
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class VictorPena extends Polymer.Element {
+      static get is() { return 'victor-pena'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'victor-pena'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(VictorPena.is, VictorPena);
+  </script>
+</dom-module>
