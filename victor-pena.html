@@ -9,11 +9,37 @@
     <style>
       :host {
         display: block;
+        border-radius: 10px;
+        @apply --victor-pena;
+      }
+
+      paper-card {
+        --paper-card: {
+            width: 100%;
+            border-radius: 20px; 
+        }
+        --paper-card-background-color: #fff;
+        @apply --victor-pena-paper-card;
+      }
+
+      paper-input {
+        padding: 20px, 10px;
+        @apply --victor-pena-paper-input;
+      }
+
+      paper-button {
+        --paper-button: {
+            display: flex;
+            border-radius: 50px;
+            background-color: #808000;
+            text-align: center;
+            justify-content: center;
+        }
       }
     </style>
     <h2>Hello [[prop1]]!</h2>
     <h2> Mi primer componente en Polymer</h2>
-    <paper-input></paper-input>
+    <paper-input label="mi primer componente en polymer"></paper-input>
 
     <paper-card heading="[[title]]" animated="false">
         <paper-input label="inputLabel" value="{{inputValue}}"></paper-input>
